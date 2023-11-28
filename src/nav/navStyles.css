@@ -1,0 +1,102 @@
+.navContainer {
+  width: 100%;
+  position: relative;
+}
+
+.navWrapper {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  background: grey;
+  position: relative;
+  z-index: 2;
+  @media (max-width: 769px) {
+    justify-content: end;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.navLink {
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+}
+
+.menuButton {
+  width: 50px;
+  height: 50px;
+  background: grey;
+  align-self: flex-end;
+  cursor: pointer;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: absolute;
+  top: -200px;
+  z-index: 1;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.mobileMenuOn {
+  animation: menuSliderOn 1s forwards;
+}
+
+@keyframes menuSliderOn {
+  from {
+    top: -200px;
+    background-color: rgba(128, 128, 128, 1);
+  }
+  to {
+    top: 100%;
+    background-color: rgba(128, 128, 128, 0.8);
+  }
+}
+
+.mobileMenuOff {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: absolute;
+  animation: menuSliderOff 1.3s forwards;
+}
+
+@keyframes menuSliderOff {
+  from {
+    top: 100%;
+    background-color: rgba(128, 128, 128, 0.8);
+  }
+  to {
+    top: -200px;
+    background-color: rgba(128, 128, 128, 0.1);
+  }
+}
+
+.mobileNavLink {
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+  padding: 15px 0;
+  font-size: 24px;
+  color: white;
+  font-weight: 600;
+}
